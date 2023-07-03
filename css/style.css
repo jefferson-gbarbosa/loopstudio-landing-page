@@ -407,7 +407,7 @@ footer{
        padding: 20px;
     }
     .banner{
-        background: url(/images/mobile/image-hero.jpg) center no-repeat;
+        background: url('./images/mobile/image-hero.jpg') center no-repeat;
         background-size: cover;
     }
     
