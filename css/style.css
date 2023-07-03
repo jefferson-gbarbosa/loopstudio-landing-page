@@ -103,7 +103,11 @@ header{
     position: relative;
     width: 100%;
     min-height: 100vh;
+<<<<<<< HEAD
     background:#0006 url('../images/desktop/image-hero.jpg') no-repeat center;
+=======
+    background:#0006 url('images/desktop/image-hero.jpg') no-repeat center;
+>>>>>>> 0add851573040eb4ee68ec80c402232896dceda4
     background-size: cover;
     background-blend-mode: multiply; 
 }
@@ -406,7 +410,7 @@ footer{
        padding: 20px;
     }
     .banner{
-        background: url('/images/mobile/image-hero.jpg') center no-repeat;
+        background: url('images/mobile/image-hero.jpg') center no-repeat;
         background-size: cover;
     }
     
