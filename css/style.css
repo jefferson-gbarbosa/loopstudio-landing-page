@@ -1,0 +1,442 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --white:hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --dark-gray:hsl(0, 0%, 55%);
+    --very-dark-gray: hsl(0, 0%, 41%); 
+
+    font-size: 62.5%; /* 1rem = 10px */
+}
+/*=== LAYOUT =================================*/
+html{
+    scroll-behavior: smooth;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body{
+    font-family: 'Alata', sans-serif; 
+    overflow-x: hidden; 
+}
+ul{
+    list-style: none;
+}
+a{  
+    font-size: 1.5rem;
+    text-decoration: none;
+    color:  var(--white);
+}
+h1,h2,h3{
+   font-family: 'Josefin Sans', sans-serif;
+   font-weight: 300;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+.container{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+}
+section{
+    padding-block: 10rem;
+}
+/*=== HEADER =================================*/
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 40px 160px;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+#header.scroll{
+    background: var(--black);
+    padding: 20px 160px;
+}
+/* nav mobile start */
+.nav-mobile{
+    display: none;
+    cursor: pointer;
+}
+.nav-menu.show-menu{
+    left: 0;
+}
+/* nav mobile end */
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.6rem;
+}
+.nav-list li{
+    position: relative;
+}
+.nav-list li::after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    transform: translate(-50%);
+    background: var(--white);
+}
+.nav-list li:hover::after{
+    width: 25px;
+}
+.nav-toggle{
+    display: none;
+    cursor: pointer;
+}
+/*=== BANNER =================================*/
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background:#0006 url(/images/desktop/image-hero.jpg) no-repeat center;
+    background-size: cover;
+    background-blend-mode: multiply; 
+}
+.banner h1{
+    max-width: 620px;
+    font-size:6.7rem;
+    padding: 32px;
+    margin-top: 18rem; 
+    margin-left: 20rem;
+    border: 3px solid var(--white);
+    color: var(--white);
+}
+/*=== ABOUT =================================*/
+.about{
+    position: relative;
+    margin-bottom: 188px;
+}
+.about .img-box{
+    display: block;
+}
+.about .content-box{
+    position: absolute;
+    top: 200px;
+    left: 55%;
+    padding: 44px;
+    max-width: 640px;
+    background: var(--white);
+}
+.content-box h2{
+    font-size:4rem;
+    margin-bottom: 30px;
+}
+.content-box p{
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    line-height: 1.7;
+}
+/*=== PRODUCT =================================*/
+.product{
+    position: relative;
+    margin-bottom: 188px;
+}
+.product h2{
+    font-size:4rem;
+    margin-bottom: 80px;
+}
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    place-content: center;
+    grid-gap:30px
+}
+.product-card{
+    position: relative;
+    height: 458px;
+    cursor: pointer;
+}
+.product-card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.product-card::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%,#000b);
+}
+.product-card:hover::after{
+    background: linear-gradient(180deg, #fffa 40%,#555a);
+}
+.product-card h3{
+    position: absolute;
+    bottom: 35px;
+    left: 40px;
+    font-size:2.1rem;
+    color: var(--white);
+    z-index: 5;
+}
+.product-card:hover h3{
+    color: var(--black);
+}
+.btn-primary{
+    position: absolute;
+    right: 1px;
+    top: 5px;
+    padding: 8px 35px;
+    letter-spacing: 5px;
+    border: 1px solid var(--black);
+    color: var(--black);
+}
+.btn-primary:hover{
+    color: var(--white);
+    background: var(--black);
+}
+/*=== FOOTER =================================*/
+footer{
+    background-color: var(--black);
+    padding-block: 20px;    
+}
+.flex-footer{
+    display: flex;
+    justify-content: space-between;
+    gap:25rem;
+    margin-bottom: 2rem;
+}
+.nav-footer{
+    height: initial;
+    display: flex;
+    justify-content: center;
+}
+.nav-footer ul{
+    display: flex;
+    column-gap: 1rem;
+}
+.nav-footer li{
+    position: relative;
+}
+.nav-footer li::after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    transform: translate(-50%);
+    background: var(--white);
+}
+.nav-footer li:hover::after{
+    width: 25px;
+}
+.footer-brand{
+    margin-bottom: 20px;
+}
+.footer-brand img{
+    max-width: 148px;
+}
+.footer-right{
+    text-align: right; 
+}
+.social-links{
+    margin-bottom: 20px;
+}
+.social-links a{
+    position: relative;
+    font-size: 1.8rem;
+    color: var(--white);
+}
+.social-links a::after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    transform: translate(-50%);
+    background: var(--white);
+}
+.social-links a:hover::after{
+    width: 15px;
+}
+.social-links a:not(:last-child){
+   margin-right: 12px; 
+}
+.copyright{
+    font-size: 1.6rem;
+    color: var(--very-dark-gray);
+}
+.attribution{ 
+    font-size: 11px; 
+    text-align: center;
+}
+.attribution a { 
+    color: var(--white) 
+}
+.attribution a:last-child{
+    margin-right: 7rem;
+}
+/*=== RESPONSIVE =================================*/
+@media(max-width:1200px){
+    .about .img-box{
+        margin-bottom: 80px;
+    }
+    .about .img-box img {
+        width: 100%;
+    }
+    .about .content-box{
+        position: static;
+        max-width: 100%;
+        text-align: center;
+        padding: 0 95px;
+    }
+}
+@media(max-width:992px){
+    header{
+        padding: 30px;
+    }
+    .banner h1{
+        margin-left: 10rem;
+    }
+    .container{
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+    .product{
+        margin-bottom: 120px;
+    }
+    .product h2{
+        text-align: center;
+    }
+    .btn-primary{
+        position: static;
+        display: block;
+        width: max-content;
+        margin: auto;
+        margin-top: 80px;
+    }
+    .flex-footer{
+        flex-direction: column;
+        gap: initial;
+    }
+    .footer-left{
+        margin-bottom: 38px;
+    }
+    .footer-brand{
+        text-align: center;
+    }
+    .footer-right{
+        text-align: center;
+    }
+    .copyright{
+      font-size: 1.6rem;
+    }
+}
+@media(max-width:767px){
+    .nav-mobile{
+        display: flex;
+        position: absolute;
+        right: 25px;
+        left: 25px;
+        top: 40px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-mobile img{
+        max-width: 145px;
+    }
+    .nav-menu{
+        position: fixed;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--black);
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+        transition: .25s;
+    }
+    .nav-list{
+        flex-direction: column;
+        gap: 25px;
+    }
+    .nav-list li a{
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    .nav-list li::after{
+        display: none;
+    }
+    .nav-toggle{
+        display: block;
+    }
+    .banner h1{
+        max-width: 520px;
+        font-size: 6rem;
+    }
+    .about{
+        margin-bottom: 120px;
+    }
+    .about .content-box {
+        padding: 0;
+    }
+    .attribution a:last-child {
+        margin-right: 3rem;
+    }
+}
+@media(max-width:640px){
+ .banner h1{
+    max-width: 490px;
+    margin-left: 2rem;
+ }
+}
+@media(max-width:480px){
+    header{
+       padding: 20px;
+    }
+    .banner{
+        background: url(/images/mobile/image-hero.jpg) center no-repeat;
+        background-size: cover;
+    }
+    
+    .banner h1{
+        max-width: 360px;
+        font-size: 3.6rem;
+        padding: 12px;
+    }
+    .product-card{
+        height: initial;
+    }
+    .nav-footer ul{
+        flex-direction: column;
+        gap: 2rem;
+        margin: auto;
+    }
+    .attribution a { 
+        display: flex; 
+        justify-content: center; 
+    }
+    .attribution a:last-child {
+        margin-right: 1rem;
+    }
+     
+}
+@media(max-width:375px){
+    .banner h1{
+        max-width: 320px;
+        font-size: 3.8rem;
+        padding: 14px;
+    }
+}
