@@ -104,7 +104,7 @@ header{
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background:#0006 url(images/desktop/image-hero.jpg) no-repeat center;
+    background:#0006 url(../images/desktop/image-hero.jpg) no-repeat center;
     background-size: cover;
     background-blend-mode: multiply; 
 }
